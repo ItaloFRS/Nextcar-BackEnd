@@ -1,15 +1,29 @@
-# ETAPA 1: BUILD (Compilação)
-FROM maven:4.0.0-openjdk-21 AS build
-# Copia todo o código-fonte para a imagem de build
+# --- ETAPA 1: BUILD ---
+# Usamos uma imagem Maven estável com Java 21 (Eclipse Temurin)
+FROM maven:3.9-eclipse-temurin-21 AS build
+
+# Define o diretório de trabalho
+WORKDIR /app
+
+# Copia os arquivos do projeto
 COPY . .
-# Roda o comando Maven para limpar e empacotar (criando o JAR)
+
+# Compila o projeto e gera o .jar (pula os testes para ser mais rápido no deploy)
 RUN mvn clean package -DskipTests
 
-# ETAPA 2: RUNTIME (Execução)
-FROM openjdk:21-jdk-slim
-# Copia o JAR criado na etapa de build para a pasta raiz do container de execução, nomeando-o como app.jar
-COPY --from=build /target/*.jar app.jar
-# Sua aplicação Spring Boot deve usar a porta 8080 por padrão
+# --- ETAPA 2: RUNTIME ---
+# Usamos uma imagem leve do Java 21 para rodar a aplicação
+FROM eclipse-temurin:21-jre-alpine
+
+# Define o diretório de trabalho
+WORKDIR /app
+
+# Copia o .jar gerado na etapa anterior
+# O comando abaixo pega qualquer arquivo .jar na pasta target
+COPY --from=build /app/target/*.jar app.jar
+
+# Expõe a porta 8080
 EXPOSE 8080
-# Define o comando que será executado ao iniciar o container
+
+# Comando para iniciar a aplicação
 ENTRYPOINT ["java", "-jar", "app.jar"]
