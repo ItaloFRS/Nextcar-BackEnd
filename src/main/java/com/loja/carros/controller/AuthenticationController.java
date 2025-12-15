@@ -14,6 +14,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin(origins = "https://nextcarweb.vercel.app")
 @RestController
 @RequestMapping("auth")
 public class AuthenticationController {

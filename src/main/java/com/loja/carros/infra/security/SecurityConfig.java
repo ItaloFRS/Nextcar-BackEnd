@@ -64,7 +64,7 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
         // Adicione a porta do seu front se mudar (ex: 5173, 3000)
-        config.setAllowedOrigins(List.of("http://localhost:5173", "http://localhost:5174", "http://localhost:8081" ));
+        config.setAllowedOrigins(List.of("http://localhost:5173", "http://localhost:5174", "http://localhost:8081", "https://nextcarweb.vercel.app" ));
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         config.setAllowedHeaders(List.of("*"));
         config.setAllowCredentials(true);
