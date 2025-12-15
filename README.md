@@ -56,21 +56,39 @@ Antes de rodar a aplicação localmente, assegure que você tenha:
 ---
 
 ## 📁 Estrutura de arquivos
-├── .mvn/
+
+Nextcar-BackEnd/
+├── .mvn/                         # Configurações do Maven Wrapper
+│   └── wrapper/
+│       ├── maven-wrapper.jar
+│       └── maven-wrapper.properties
+│
 ├── src/
 │   ├── main/
 │   │   ├── java/
-│   │   │   └── com/nextcar/
-│   │   │       ├── controller/
-│   │   │       ├── model/
-│   │   │       ├── repository/
-│   │   │       └── service/
-│   └── resources/
-│       ├── application.properties
-│       └── ...
+│   │   │   └── com/
+│   │   │       └── nextcar/
+│   │   │           ├── controller/      # Controllers (camada REST)
+│   │   │           ├── service/         # Regras de negócio
+│   │   │           ├── repository/      # Repositórios JPA
+│   │   │           ├── model/            # Entidades / Models
+│   │   │           ├── dto/              # DTOs (entrada/saída)
+│   │   │           ├── config/           # Configurações (CORS, Security, etc)
+│   │   │           └── NextcarApplication.java
+│   │   │
+│   │   └── resources/
+│   │       ├── application.properties   # Configurações da aplicação
+│   │       ├── application-example.properties
+│   │       └── static/                  # Arquivos estáticos (se houver)
+│   │
+│   └── test/
+│       └── java/
+│           └── com/
+│               └── nextcar/              # Testes unitários e de integração
+│
+├── .gitignore
 ├── mvnw
 ├── mvnw.cmd
 ├── pom.xml
-└── ...
-Renomeie o arquivo:
+└── README.md
 
