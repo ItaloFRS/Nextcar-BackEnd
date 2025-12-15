@@ -55,8 +55,9 @@ Antes de rodar a aplicação localmente, assegure que você tenha:
 
 ---
 
-## 📁 Estrutura de arquivos
+## 📁 Estrutura de Pastas
 
+```
 Nextcar-BackEnd/
 ├── .mvn/                         # Configurações do Maven Wrapper
 │   └── wrapper/
@@ -72,23 +73,25 @@ Nextcar-BackEnd/
 │   │   │           ├── service/         # Regras de negócio
 │   │   │           ├── repository/      # Repositórios JPA
 │   │   │           ├── model/            # Entidades / Models
-│   │   │           ├── dto/              # DTOs (entrada/saída)
-│   │   │           ├── config/           # Configurações (CORS, Security, etc)
+│   │   │           ├── dto/              # DTOs
+│   │   │           ├── config/           # Configurações (CORS, Security)
 │   │   │           └── NextcarApplication.java
 │   │   │
 │   │   └── resources/
-│   │       ├── application.properties   # Configurações da aplicação
-│   │       ├── application-example.properties
-│   │       └── static/                  # Arquivos estáticos (se houver)
+│   │       ├── application.properties
+│   │       └── application-example.properties
 │   │
 │   └── test/
 │       └── java/
 │           └── com/
-│               └── nextcar/              # Testes unitários e de integração
+│               └── nextcar/
 │
 ├── .gitignore
 ├── mvnw
 ├── mvnw.cmd
 ├── pom.xml
 └── README.md
+
+```
+
 
