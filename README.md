@@ -94,4 +94,32 @@ Nextcar-BackEnd/
 
 ```
 
+---
+
+## 👨‍💻 Autores
+
+Este projeto foi desenvolvido com dedicação pelas seguintes pessoas:
+
+✨ Italo Farias
+
+- 💼 Desenvolvedor Full Stack
+
+- 🌎 Campina Grande – PB, Brasil
+
+- 🐙 GitHub: @ItaloFRS
+
+- 💡 Responsável por parte do desenvolvimento.
+
+---
+
+✨ Vandenberg Melo
+
+- 💼 Desenvolvedor Back-End
+
+- 🌎 Campina Grande – PB, Brasil
+
+- 🐙 GitHub: @
+
+- 💡 Responsável por parte do desenvolvimento, arquitetura e manutenção do projeto.
+
 
